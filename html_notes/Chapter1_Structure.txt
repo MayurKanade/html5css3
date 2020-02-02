@@ -1,0 +1,12 @@
+HTML Tags are often referred to as Elements.
+HTML Element is made up of characters that live inside opening tags and closing tags. e.g <p> and </p>
+HTML Elements: Each HTML element tells the browser something about information that sits between its opening and closing tag.
+Attributes: Attributes provide additional information about the contents of an element and are made of two parts: (a name and a value.) key-value pair.
+            Attribute name indicates what kind of information you are supplying about the element's content. It should be written in lowercase.
+            e.g.  <p lang="en-us">Paragraph in English </p>
+
+
+
+			      
+
+
