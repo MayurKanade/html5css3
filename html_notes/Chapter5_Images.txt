@@ -1,0 +1,81 @@
+There are many reasons why you might want to add an image to a web page: 
+you might want to include a logo, photograph,illustration, diagram, or chart.
+
+1. Include an image in your web pages using HTML
+2. Pick which image format to use
+3. Show an image at the right size
+4. Optimize an image for use on the web to make pages load faster 
+
+Choosing Images for Your Site:
+A picture can say a thousand words, and great images help make the difference between an average-looking site and a really engaging one.
+
+Images should:
+1. Be relevant
+2. Convey information
+3. Convey the right mood
+4. Be instantly recognisable
+5. Fit the color palette
+
+Stock photos : Should use paid sites for your images because of @copyrights.
+1. www.istockphoto.com
+2. www.gettyimages.com
+3. www.veer.com
+4. www.sxc.hu
+5. www.fotolia.com
+
+Storing Images:
+If you are building a site from scratch, it is good practice to create a folder for all of the images
+the site uses.
+For example, images such as logos and buttons might sit in a folder called interface, 
+product photographs might sit in a page called products, 
+and images related to news might live in a folder called news.
+
+Tags Used:
+1. <img> tag: In HTML To add an image into the page you need to use an <img> element. This is an empty element 
+              (which means there is no closing tag). It must carry the following two attributes:
+
+Attributes of <img> tag:
+
+1. src   : This tells the browser where it can find the image file. This will usually be a relative URL
+           pointing to an image on your own site.
+2. alt   : This provides a text description of the image which describes the image if you cannot see it.
+3. title : To provide additional information about the image. Most browsers will display the content of this
+           attribute in a tooltip when the user hovers over the image.
+		   
+Properties of <img> tag (are also an attributes):
+
+1. Height : This specifies the height of the image in pixels.
+2. Width  : This specifies the width of the image in pixels.
+            Images often take longer to load than the HTML code that makes up the rest of the page. It is, therefore, a good idea to
+            specify the size of the image so that the browser can render the rest of the text on the page while leaving the right amount of
+            space for the image that is still loading.
+
+Where to Place Images in Your Code (That really matters a lot):
+
+1. Before a paragraph: The paragraph starts on a new line after the image.
+e.g.: 
+<img src="images/bird.gif" alt="Bird" width="100" height="100" />
+<p>There are around 10,000 living species of birds
+that inhabit different ecosystems from the
+Arctic to the Antarctic. Many species undertake
+long distance annual migrations, and many more
+perform shorter irregular journeys.</p>
+
+2. Inside the start of a paragraph: The first row of text aligns with the bottom of the image.
+e.g.:
+<p>
+<img src="images/bird.gif" alt="Bird" width="100" height="100" />
+There are around 10,000 living
+species of birds that inhabit different
+ecosystems from the Arctic to the Antarctic. Many
+species undertake long distance annual
+migrations, and many more perform shorter
+irregular journeys.</p>
+
+3. In the middle of a paragraph: The image is placed between the words of the paragraph that it appears in.
+e.g.:
+<p>There are around 10,000 living species of birds
+that inhabit different ecosystems from the
+Arctic to the Antarctic.<img src="images/bird.gif" alt="Bird" width="100" height="100" />Many species undertake long
+distance annual migrations, and many more perform
+shorter irregular journeys.</p>
