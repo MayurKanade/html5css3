@@ -1,0 +1,168 @@
+EXTRA MARKUP
+1. Specifying Different Versions of HTML
+2. Identifying and Grouping Elements
+3. Comments, Meta Information and iframes.
+
+1. HTML 4    -- RELEASED IN THE YEAR 1997
+2. XHTML 1.0 -- RELEASED IN THE YEAR 2000
+                A. Strict XHTML 1.0        -- Where authors have to follow the rules to the letter.
+                B. Translational XHTML 1.0 -- Where authors could still use presentational elements such as <center> and <font>
+3. HTML5     -- RELEASED IN THE YEAR 2000.
+
+Version Recoginition:
+
+1. HTML5                 -- <!DOCTYPE html>
+
+2. HTML4                 -- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">				
+
+3. Translation XHTML 1.0 -- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/ xhtml1-transitional.dtd">
+
+4. Strict XHTML 1.0      -- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd">
+
+5. XML Declaration       -- <?xml version="1.0" ?>
+
+Comments in HTML:
+                     The comments are not visible to users in the main browser window, they can be viewed by anyone who looks at 
+					 the source code behind the page.
+
+Syntactical Representation: <!-- comment goes here -->
+
+
+1. id Attribute    : Every HTML element can carry the id attribute. It is used to uniquely identify that element from other elements on the
+				     page. Its value should start with a letter or an underscore (not a number or any other character). 
+				     It is important that no two elements on the same page have the same value for their id attributes 
+				     (otherwise the value is no longer unique).
+				     
+				     The id attribute is known as a global attribute because it can be used on any element
+				 
+2. class Attribute : Every HTML element can also carry a class attribute. Sometimes, rather than uniquely identifying one element within
+					 a document, you will want a way to identify several elements as being different from the other elements on the page.
+					 
+3. Block Elements  : Some elements will always appear to start on a new line in the browser window. These are known as block level elements.
+                     Examples of block elements are <h1>, <p>, <ul>, and <li>.
+					 
+4. Inline Elements : Some elements will always appear to continue on the same line as their neighbouring elements. 
+                     These are known as inline elements.
+					 Examples of inline elements are <a>, <b>, <em>, and <img>.
+					 
+
+Grouping Text and Elements in a Block:
+
+1. <div> Element   : The <div> element allows you to group a set of elements together in one block-level box.
+                     For example, you might create a <div> element to contain all of the elements for the header
+                     of your site (the logo and the navigation), or you might create a <div> element to contain comments from visitors.
+					 
+                     In a browser, the contents of the <div> element will start on a new line, but other than this it will make no difference 
+					 to the presentation of the page.
+
+                     Using an id or class attribute on the <div> element, however, means that you can create CSS style rules to 
+					 indicate how much space the <div> element should occupy on the screen and change the appearance of all 
+					 the elements contained within it.
+					 
+					 It can also make it easier to follow your code if you have used <div> elements to hold each section of the page.
+
+
+Grouping Text and Elements Inline:
+
+1. <span> Element  : The <span> element acts like an inline equivalent of the <div> element. It is used to either: 
+                     
+					 A. Contain a section of text where there is no other suitable element to differentiate it from its surrounding text.
+					 B. Contain a number of inline elements.
+					 
+
+
+IFRAMES:
+           
+1. <iframe> Element : An iframe is like a little window that has been cut into your page — and in that window you can see another page. 
+                      The term iframe is an abbreviation of inline frame.		   
+					  One common use of iframes (that you may have seen on various websites) is to embed a Google Map into a page. 
+					  The content of the iframe can be any html page (either located on the same server or anywhere else on the web).
+					  
+Attributes of the iframe:
+
+1. src         : The src attribute specifies the URL of the page to show in the frame.
+2. height      : The height attribute specifies the height of the iframe in pixels.
+3. width       : The width attribute specifies the width of the iframe in pixels.
+4. scrolling   : The scrolling attribute will not be supported in HTML5. In HTML 4 and XHTML, it indicates whether the iframe should
+                 have scrollbars or not. This is important if the page inside the iframe is larger than the space you have allowed for it 
+			     (using the height and width attributes). Scrollbars allow the user to move around the frame to see more content. 
+			     It can take one of three values: yes (to show scrollbars),no (to hide scrollbars) and auto (to show them only if needed).
+5. frameborder : The frameborder attribute will not be supported in HTML5. In HTML 4 and XHTML, it indicates whether the frame should have
+                 a border or not. A value of 0 indicates that no border should be shown. A value of 1 indicates that a border should be shown.
+6. seamless    : In HTML5, a new attribute called seamless can be applied to an iframe where scrollbars are not desired. 
+                 The seamless attribute (like some other new HTML5 attributes) does not need a value, but you will often see authors give it a value of
+                 seamless. Older browsers do not support the seamless attribute.
+
+e.g.:   
+        <iframe src="http://maps.google.co.uk/maps?q=moma+new+york &amp;output=embed" width="450" height="350" frameborder="0" scrolling="no">
+        </iframe>
+
+
+Inforamtion about your pages:
+
+1.<meta> Element : The <meta> element lives inside the <head> element and contains information about that web page. 
+                   It is not visible to users but fulfills a number of purposes such as telling search engines about your page, 
+				   who created it, and whether or not it is time sensitive. (If the page is time sensitive, it can be set to expire.)
+				   
+				   The <meta> element is an empty element so it does not have a closing tag. It uses attributes to carry the information.
+				  
+The <meta> element has only two attributes and they're 1.name and 2.content
+The value of the name attribute is the property you are setting.
+The value of the content attribute is the value that you want to give to this property.
+
+There are some standard values defined inside the name attribute and they are commonly used.
+
+1.  description : This contains a description of the page. This description is commonly used by search engines to understand 
+                  what the page is about and should be a maximum of 155 characters. Sometimes it is also displayed in search engine results.
+				  
+2.  keywords    : This contains a list of commaseparated words that a user might search on to find the page. 
+                  In practice, this no longer has any noticeable effect on how search engines index your site.
+				  
+3.  robots      : This indicates whether search engines should add this page to their search results or not. 
+                  A value of noindex can be used if this page should not be added. A value of nofollow can be used if search engines should add this
+                  page in their results but not any pages that it links to.
+				  
+The meta element also uses the http-equivalent and content attributes in pairs.
+Each content has different purpose and they are as follows:
+
+1.  author      : This defines the author of the web page.
+2.  pragma      : This defines the user from caching the web page. (i.e. storing it locally to save time downloading it on subsequent visits.)
+3.  expires     : Because browsers often cache the content of a page, the expires option can be used to indicate when the page 
+                  should expire (and no longer be cached). Note that the date must be specified in the format shown.
+				  e.g. <meta http-equiv="expires" content="Fri, 04 Apr 2014 23:59:59 GMT" />
+				  
+
+e.g.:
+
+                                                        <!DOCTYPE html>
+                                                        <html>
+                                                            <head>
+                                                            <title>Information About Your Pages</title>
+                                                            <meta name="description"
+                                                            content="An Essay on Installation Art" />
+                                                            <meta name="keywords"
+                                                            content="installation, art, opinion" />
+                                                            <meta name="robots"
+                                                            content="nofollow" />
+                                                            <meta http-equiv="author"
+                                                            content="Jon Duckett" />
+                                                            <meta http-equiv="pragma"
+                                                            content="no-cache" />
+                                                            <meta http-equiv="expires"
+                                                            content="Fri, 04 Apr 2014 23:59:59 GMT" />
+                                                            </head>
+                                                            <body>
+                                                            </body>
+                                                        </html>
+														
+ESCAPE CHARACTERS:
+
+There are some characters that are used in and reserved by HTML code. (For example, the left and right angled brackets.)
+e.g.:
+
+1. < Less than sign      : &lt; &#60;
+2. > Greater than sign   : &gt; &amp;
+3. £ Pound sign          : &pound; &#163;
+4. ¤ Euro  sign          : &euro; &#8364;
+5. © Copyright symbol    : &copy; &#169;
+6. × Multiplication sign : &times;&#215;
