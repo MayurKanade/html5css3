@@ -1,0 +1,409 @@
+*******  TEXT  *******
+
+The properties that allow you to control the appearance of text can be split into two groups:
+
+1. Those that directly affect the font and its appearance (including the typeface, whether it is regular, bold or italic, and the size of the text.)
+2. Those that would have the same effect on text no matter what font you were using (including the color of text and the spacing between words and letters.)
+
+The formatting of your text can have a significant effect on how readable your pages are. As we look through these properties.
+
+1. Typeface Terminology :
+                            
+A. SERIF                : Serif fonts have extra details on the ends of the main strokes of the letters. These details are known as serifs.
+                          In print, serif fonts were traditionally used for long passages of text because they were considered easier to read.
+						  
+B. SANS-SERIF           : Sans-serif fonts have straight ends to letters, and therefore have a much cleaner design.
+                          Screens have a lower resolution than print. So, if the text is small, sans-serif fonts can be clearer to read.
+						  
+C. MONOSPACE            : Every letter in a monospace (or fixed-width) font is the same width. (Non-monospace fonts have different widths.)
+                          Monospace fonts are commonly used for code because they align nicely, making the text easier to follow.
+						  
+PROPERTIES OF TYPEFACE
+
+1. WEIGHT               : LIGHT MEDIUM BOLD BLACK
+                          The font weight not only adds emphasis but can also affect the amount of white space and contrast on a page.
+						  
+2. STYLE                : NORMAL ITALIC OBLIQUE
+                          Italic fonts have a cursive aspect to some of the lettering. Oblique font styles take the normal style and put it on an angle.
+						  
+3. STRETCH              : CONDENSED REGULAR EXTENDED
+                          In condensed (or narrow) versions of the font, letters are thinner and closer together.
+                          In expanded versions they are thicker and further apart.
+						  
+						  
+
+*** CHOOSING TYPEFACE FOR YOUR WEBSITE ***
+
+When choosing a typeface, it is important to understand that a browser will usually only display it if it's installed on that user's computer.
+
+1. SERIF                : Serif fonts have extra details on the end of the main strokes of the letters.
+                          e.g.: 1. Georgia  2. Times 3. Times New Roman
+						  
+2. SANS-SERIF           : Sans-serif fonts have straight ends to letters and therefore have a much cleaner design.
+                          e.g.: 1. Arial  2. Verdana 3. Halvetica
+						  
+3. MONOSPACE            : Every letter in a monospace typeface is the same width. (Non-monospace fonts have different widths.)
+                          e.g.: 1. Courier 2. Courier New 
+						  
+4. FANTASY              : Fantasy fonts are usually decorative fonts and are often used for titles. They're not designed for long bodies of text.
+                          e.g.: 1. Impact 2. Haettenschweiler
+						  
+*** A TECHNIQUE THAT OFFER A WIDE CHOICE OF TYPEFACE ***
+
+1. FONT-FAMILY		       : The user's computer needs the typeface installed. CSS is used to specify the typeface.
+                             The font-family property allows you to specify the typeface that should be used for any text inside the element(s) 
+							 to which a CSS rule applies.
+							 The value of this property is the name of the typeface you want to use.
+							 The people who are visiting your site need the typeface you have specified installed on their computer in order for it to be
+                             displayed.
+							 You can specify a list of fonts separated by commas so that, if the user does not have your first choice of typeface installed,
+                             the browser can try to use an alternative font from the list.
+							 It is also common to end with a generic font name for that type of font.
+							 If a font name is made up of more than one word, it should be put in double quotes.
+							 Designers suggest pages usually look better if they use no more than three typefaces on a page.
+							 
+e.g.:
+         <style type="text/css">
+               body {
+                      font-family: Georgia, Times, serif;
+			        }
+               h1, h2 {
+                      font-family: Arial, Verdana, sans-serif;
+					  }
+               .credits 
+			         {
+                      font-family: "Courier New", Courier,
+                      monospace;
+					 }
+          </style>
+		  
+2. SIZE OF TYPE (font-size) :
+
+The font-size property enables you to specify a size for the font. There are several ways to specify the size of a font. 
+The most common are: PIXELS , PERCENTAGES , EMS
+
+The default size of text in a browser is 16 pixels.
+
+*** UNITS OF SIZE ***
+
+TWELVE PIXEL SCALE 
+
+PIXELS                                         PERCENTAGE                                           EMS
+
+h1            24px             =                200%                          =                     1.5em                
+h2            18px             =                150%                          =                     1.3em
+h3            14px             =                117%                          =                     1.17em
+body          12px             =                75%                           =                     100%
+                                                                                                    p 0.75em
+																									
+SIXTEEN PIXEL SCALE											
+																									
+h1           32px              =                 200%                         =                     2em     
+h2           24px              =                 150%                         =                     1.5em
+h3  		 18px			   =                 133%                         =                     1.125em
+body         16px              =                 100%                         =                     body 100%
+                                                                                                    p    1em
+																									
+																									
+3. FONT FACE  (@font-face)
+
+@font-face allows you to use a font, even if it is not installed on the computer of the person browsing, by allowing you to
+specify a path to a copy of the font, which will be downloaded if it is not on the user's machine.	
+Because this technique allows a version of the font to be downloaded to the user's computer, it is important that the
+license for the font permits it to be used in this way.	
+
+e.g.:
+@font-face {
+font-family: 'ChunkFiveRegular';
+src: url('fonts/chunkfive.eot');
+           }
+h1, h2 {
+font-family: ChunkFiveRegular, Georgia, serif;
+       } 
+ 
+font-family : This specifies the name of the font. This name can then be used as a value of the font-family property in the rest of the style
+              sheet (as shown in the rule for the <h1> and <h2> elements). 
+			  
+src         : This specifies the path to the font. In order for this technique to work in all browsers, you will probably need to specify paths
+              to a few different versions of the font.
+			  
+format      : This specifies the format that the font is supplied in.
+              Many typeface makers do not allow you to use their fonts in this way, but there are open source fonts you can use freely.
+			  Websites:
+			  1. www.fontsquirrel.com
+			  2. www.fontex.org
+			  3. www.openfontlibrary.org
+			  When looking at fonts on these sites, it is still important to check the font's license agreement because some fonts are only free
+              for personal use.
+			  
+Note        : Google also provides open source fonts. Rather than adding the @font-face rule to your own style sheet, you link to a CSS file
+              and font files on their servers: www.google.com/webfonts
+			  
+*** UNDERSTANDING FONT FORMATS ***
+
+Different browsers support different formats for fonts (in the same way that they support different audio and video formats), so you will need
+to supply the font in several variations to reach all browsers. If you do not have all of these formats for your font, you can upload the font to a website
+called FontSquirrel where they will convert it for you:
+
+www.fontsquirrel.com/fontface/generator
+
+Font Squirrel also provides you with the CSS code for the @font-face rule. This is very helpful because, when you are dealing with multiple font
+formats, the src and format properties of the @font-face rule can get rather complicated. You can see an example of a more complicated @font-face
+rule on the left. The various font formats should appear in your code in this order:
+1: eot
+2: woff
+3: ttf/otf
+4: svg
+
+
+4. BOLD (font-weight)
+
+The font-weight property allows you to create bold text. There are two values that this property commonly takes:
+
+1. normal : This causes text to appear at a normal weight.
+2. bold   : This causes text to appear bold. 
+            e.g.: .credits { font-weight: bold;}
+			In this example, you can see that the element whose class attribute has a value of credits has been bolded.
+			
+5. ITALIC (font-style)
+
+If you want to create italic text, you can use the font-style property. There are three values this property can take:
+
+1. normal  : This causes text to appear in a normal style (as opposed to italic or oblique).
+2. italic  : This causes text to appear italic.
+3. oblique : This causes text to appear oblique.
+             Italic fonts were traditionally stylized versions of the font based on calligraphy, whereas an oblique version would take the 
+			 normal version and put it on an angle. 
+			 It is not unusual for the browser to fail to find an italic version of a typeface, in which case it will use an algorithm to place the normal
+             version of the type on a slant,which means that a lot of italic text online is actually oblique.
+			 
+6. UPPERCASE AND LOWERCASE:
+
+PROPERTIES :
+
+1. text-transform : The text-transform property is used to change the case of text giving it one of the following values:
+                    A. uppercase  :  This causes the text to appear uppercase.
+					B. lowercase  :  This causes the text to appear lowercase.
+					C. capitalize :  This causes the first letter of each word to appear capitalized.
+					
+					e.g: 
+					       h1 {text-transform: uppercase;}
+                           h2 {text-transform: lowercase;}
+                           .credits {text-transform: capitalize;}
+						   
+7. UNDERLINE AND STRIKE (Text Decoration.) : The text-decoration property allows you to specify the following values:
+                    A. none         : This removes any decoration already applied to the text.
+					B. underline    : This adds a line underneath the text.
+					C. overline     : This adds a line over the top of the text.
+					D. line-through : This adds a line through words.
+					E. blink        : This animates the text to make it flash on and off (however this is generally frowned upon, 
+					                  as it is considered rather annoying).
+					
+					e.g.:   .credits { text-decoration: underline; } 
+					        a { text-decoration: none; }
+							
+8. LEADING (line-height) :
+
+Leading (pronounced ledding) is a term typographers use for the vertical space between lines of text. In a typeface, the part of
+a letter that drops beneath the baseline is called a descender,while the highest point of a letter is called the ascender. 
+Leading is measured from the bottom of the descender on one line to the top of the ascender on the next.
+
+In CSS, the line-height property sets the height of an entire line of text, so the difference between the fontsize and the line-height is
+equivalent to the leading (as shown in the diagram above).
+Increasing the line-height makes the vertical gap between lines of text larger.
+
+Increasing the default amount of leading can make text easier to read. The vertical space between lines should be larger than the 
+space between each word as this helps the eye move along the line instead of down them. A good starter setting is around 1.4 to 1.5em. 
+Because users can adjust the default size of text in their browser, the value of the lineheight property is best given in ems, not pixels, 
+so that the gap between lines is relative to the size of text the user has selected.
+
+9. LETTER AND WORD SPACING (letter-spacing and word-spacing) :
+
+Kerning is the term typographers use for the space between each letter. You can control the space between each letter with the letter-spacing property.
+It is particularly helpful to increase the kerning when your heading or sentence is all in uppercase. If your text is in sentence (or normal) case,
+increasing or decreasing the kerning can make it harder to read.
+You can also control the gap between words using the word-spacing property.
+When you specify a value for these properties, it should be given in ems, and it will be added on top of the default value specified by the font.
+The default gap between words is set by the typeface (often around 0.25em), and it is unlikely that you would need to change this property
+regularly. If the typeface is bold or you have increased the space between letters, then a larger gap between words can increase readability.
+
+10. ALIGNMENT (text-align) :
+
+The text-align property allows you to control the alignment of text. The property can take one of four values:
+
+1. left    : This indicates that the text should be left-aligned.
+2. right   : This indicates that the text should be right-aligned.
+3. center  : This allows you to center text.
+4. justify : This indicates that every line in a paragraph, except the last line, should be set to take up the full width of the containing box.
+
+           e.g.: 
+		   h1 { text-align: left;}
+           p {  text-align: justify; }
+           .credits { text-align: right;}
+
+11. VERTICAL ALIGNMENT 
+
+The vertical-align property is a common source of confusion. It is not intended to allow you to vertically align text in the middle of block 
+level elements such as <p> and <div>, although it does have this effect when used with table cells (the <td> and <th> elements).
+It is more commonly used with inline elements such as <img>, <em>, or <strong> elements. When used with these elements, it performs a task very similar to
+the HTML align attribute used on the <img> element.
+
+The values it can take are:
+1. baseline
+2. sub
+3. super
+4. top
+5. text-top
+6. middle
+7. bottom
+8. text-bottom
+
+It can also take a length (usually specified in pixels or ems) or a percentage of the line height.
+
+12. INDENTING Text
+
+The text-indent property allows you to indent the first line of text within an element. The amount you want the line indented by can be specified in
+a number of ways but is usually given in pixels or ems.
+
+e.g.: 
+h1 {
+background-image: url("images/logo.gif");
+background-repeat: no-repeat;
+text-indent: -9999px;}
+.credits { text-indent: 20px;}
+
+It can take a negative value, which means it can be used to push text off the browser window. 
+You can see this technique used in this example, where the <h1> element uses a background image to represent the heading.
+		   
+
+13. CSS DropShadow (text-shadow)
+
+The text-shadow property has become commonly used despite lacking support in all browsers. It is used to create a drop shadow, which is a dark version
+of the word just behind it and slightly offset. It can also be used to create an embossed effect by adding a shadow that is slightly lighter than the text.
+The value of this property is quite complicated because it can take three lengths and a color for the drop shadow.
+1. The first length indicates how far to the left or right the shadow should fall.
+2. The second value indicates the distance to the top or bottom that the shadow should fall. 
+3. The third value is optional and specifies the amount of blur that should be applied to the drop shadow.
+4. The fourth value is the color of the drop shadow.
+
+e.g.:
+p.one {
+background-color: #eeeeee;
+color: #666666;
+text-shadow: 1px 1px 0px #000000;}
+p.two {
+background-color: #dddddd;
+color: #666666;
+text-shadow: 1px 1px 3px #666666;}
+p.three {
+background-color: #cccccc;
+color: #ffffff;
+text-shadow: 2px 2px 7px #111111;}
+p.four {
+background-color: #bbbbbb;
+color: #cccccc;
+text-shadow: -1px -2px #666666;}
+p.five {
+background-color: #aaaaaa;
+color: #ffffff;
+text-shadow: -1px -1px #666666;}
+
+
+14. FIRST LETTER OR LINE
+
+You can specify different values for the first letter or first line of text inside an element using
+:first-letter and :first-line.
+
+Technically these are not properties. They are known as pseudo-elements.
+You specify the pseudo-element at the end of the selector, and then specify the declarations as you would normally for any other element.
+
+e.g.: 
+p.intro:first-letter {
+font-size: 200%;}
+p.intro:first-line {
+font-weight: bold;}
+
+Note : It is worth trying this example in your browser so that you can see how the first-line pseudoelement will only affect the first line of text, 
+       even if you resize your browser window and less or more words appear on each line. p.intro:first-letter { font-size: 200%;} 
+	   p.intro:first-line {font-weight: bold;} chapter-12/first-letter-and-line.html CSS First Lett er or Line :first-letter, :first-line 
+	   CSS introduces both pseudoelements and pseudo-classes. A pseudo-element acts like an extra element is in the code. In the case of the :first-letter
+       and :first-line pseudo elements, it is as if there is an extra element around the first letter or the first line which can have its own styles applied.
+       A pseudo-class acts like an extra value for a class attribute. In the case of the :visited pseudo-class,Similarly, the :hover pseudo-class allows
+       you to style elements differently when a user hovers over them.
+	   
+15. STYLING LINKS (:link, :visited)
+
+Browsers tend to show links in blue with an underline by default, and they will change the color of links that have been visited to help users know which
+pages they have been to. In CSS, there are two pseudoclasses that allow you to set different styles for links that have and have not yet been visited.
+
+1. :link       -   This allows you to set styles for links that have not yet been visited.
+2. :visited    -   This allows you to set styles for links that have been clicked on. They are commonly used to control colors of the links 
+                   and also whether they are to appear underlined or not.
+				   
+
+15. RESPONDING TO USERS (:hover , :active , :focus)
+
+There are three pseudo-classes that allow you to change the appearance of elements when a user is interacting with them.
+
+1. :hover      - This is applied when a user hovers over an element with a pointing device such as a mouse. 
+                 This has commonly been used to change the appearance of links and buttons when a user places their cursor over them. 
+				 It is worth noting that such events do not work on devices that use touch screens (such as the iPad) because the screen is not able to
+                 tell when someone is hovering their finger over an element.
+				 
+2. :active     - This is applied when an element is being activated by a user; for example, when a button is being pressed or a link being clicked.
+                 Sometimes this is used to make a button or link feel more like it is being pressed by changing the style or position of the element
+                 slightly.
+				 
+3. :focus      - This is applied when an element has focus. Any element that you can interact with, such as a link you can click on or any form 
+                 control can have focus. Responding to Us ers :hover, :active, :focus Focus occurs when a browser discovers that you are ready to
+                 interact with an element on the page. For example, when your cursor is in a form input ready to accept typing, that element
+                 is said to have focus. It is also possible to use the tab key on your keyboard to move through the interactive items on a page.
+				
+Note           : When pseudo-classes are used, they should appear in this order: :link, :visited, :hover, :focus, :active.
+
+
+16. ATTRIBUTE SELECTORS
+
+
+No    SELECTOR                                                    MEANING                                             EXAMPLE
+
+1.    EXISTENCE                                   [] : Matches a specific attribute                     p[class] : Targets any <p> element with an attribute
+                                                       (Whatever its value)                                        called class.
+													   
+2.    EQUALITY                                   [-] : Matches a specific attribute with                p[class="dog"] : Targets any <p> element with
+                                                       a specific value.                                                 an attribute called class whose            
+                                                                                                                         value is dog
+																														 
+3.   SPACE                                      [~-] : Matches a specific attribute                     p[class~="dog"] : Targets any <p> element with
+                                                       whose value appears in a space                                    an attribute called class whose
+                                                       separated list of words                                           value is a list of space-separated
+                                                                                                                         words, one of which is dog.
+																														 
+4.  PREFIX                                      [^-] : Matches a specific attribute                     p[attr^"d"] : Targets any <p> element with
+													   whose value begins with a						              an attribute whose value begins		 									 
+                                                       specific string.                                               with the letter "d"
+													   
+5. SUBSTRING                                    [*=] : Matches a specific attribute                     p[attr*"do"] : Targets any <p> element with an
+                                                       whose value contains a specific                                 attribute whose value contains 
+                                                       substring.                                                      the letters "do"
+													   
+6. SUFFIX                                       [$=] : Matches a specific attribute                     p[attr$"g"]  : Targets any <p> element with an
+                                                       whose value ends with a specific                                attribute whose value ends with
+                                                       string.                                                         the letter "g"
+													   
+
+
+			 
+
+
+
+
+
+
+
+ 
+
+
+						  
+
+
