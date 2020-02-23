@@ -1,0 +1,393 @@
+*** LIST TABLES AND FORMS ***
+
+Specifying bullet points styles.
+Adding borders and backgrounds to tables.
+Changing the appearance of form elements.
+
+
+1. BULLET POINT STYLES (list-style-type) :
+
+The list-style-type property allows you to control the shape or style of a bullet point (also known as a marker).
+It can be used on rules that apply to the <ol>, <ul>, and <li> elements.
+
+A. UNORDERED LIST : For an unordered list you can use the following values:
+
+none
+disc
+circle 
+square
+
+B. ORDERED LIST  : For an ordered (numbered) list you can use the following values:
+
+decimal : 1 2 3
+decimal-leading-zero : 01 02 03
+lower-alpha          : a b c
+upper-alpha          : A B C
+lower-roman          : i. ii. iii.
+upper-roman          : I. II. III.
+
+2. IMAGES FOR BULLETS (list-style-image) :
+
+You can specify an image to act as a bullet point using the list-style-image property. The value starts with the letters url and is followed by a pair
+of parentheses. Inside the parentheses, the path to the image is given inside double quotes. This property can be used on rules that apply to the <ul> 
+and <li> elements.
+
+e.g.: 
+ul {
+list-style-image: url("images/star.png");
+   }
+li {
+margin: 10px 0px 0px 0px;
+   }
+   
+3. POSITIONING THE MARKER (list-style-position)
+
+Lists are indented into the page by default and the list-styleposition property indicates whether the marker should appear on the inside or the
+outside of the box containing the main points.  
+
+This property can take one of two values:
+
+A. outside        : The marker sits to the left of the block of text. (This is the default behaviour if this property is not used.)
+B. inside         : The marker sits inside the box of text (which is indented).
+
+e.g.:
+ul {
+width: 150px;
+   }
+li {
+margin: 10px;
+   }
+ul.illuminations {
+list-style-position: outside;
+                }
+ul.season {
+list-style-position: inside;
+          }
+
+4. LIST SHORTHAND (list-style) :
+
+As with several of the other CSS properties, there is a property that acts as a shorthand for list styles. It is called list-style,
+and it allows you to express the markers' style, image and position properties in any order.
+
+e.g.:
+ul {
+list-style: inside circle;
+width: 300px;
+   }
+li {
+margin: 10px 0px 0px 0px;
+   }
+  
+5. TABLE PROPERTIES:
+ 
+There are several properties of table as follows:
+
+1. width                     :  to set the width of the table.
+2. padding                   :  to set the space between the border of each table cell and its content.
+3. text-transform            :  to convert the content of the table headers to uppercase.
+4. letter-spacing, font-size :  to add additional styling to the content of the table headers.
+5. border-top, border-bottom :  to set borders above and below the table headers.
+6. text-align                :  to align the writing to the left of some table cells and to the right of the others.
+7. background-color          :  to change the background color of the alternating table rows.
+8. :hover                    :  to highlight a table row when a user's mouse goes over it.
+
+Styling Tables ensure clean and easy follows:
+
+1. GIVE CELLS PADDING : 
+If the text in a table cell either touches a border (or another cell), it becomes much harder to read. Adding padding helps to improve readability.
+
+2. DISTINGUISH HEADINGS :
+Putting all table headings in bold (the default style for the <th> element) makes them easier to read. 
+You can also make headings uppercase and then either add a background color or an underline to clearly distinguish them from content.
+
+3. SHADE ALTERNATE ROWS :
+Shading every other row can help users follow along the lines. Use a subtle distinction from the normal color of the rows to keep
+the table looking clean
+
+4. ALIGN NUMERALS :
+You can use the text-align property to align the content of any column that contains numbers to the right, so that large numbers are clearly
+distinguished from smaller ones.
+
+e.g.:
+
+<h1>First Edition Auctions</h1>
+<table>
+<tr>
+<th>Author</th>
+<th>Title</th>
+<th class="money">Reserve Price</th>
+<th class="money">Current Bid</th>
+</tr>
+<tr>
+<td>E.E. Cummings</td>
+<td>Tulips & Chimneys</td>
+<td class="money">$2,000.00</td>
+<td class="money">$2,642.50</td>
+</tr>
+<tr class="even">
+<td>Charles d'Orleans</td>
+<td>Poemes</td>
+<td class="money"></td>
+<td class="money">$5,866.00</td>
+</tr>
+<tr>
+<td>T.S. Eliot</td>
+<td>Poems 1909 - 1925</td>
+<td class="money">$1,250.00</td>
+<td class="money">$8,499.35</td>
+</tr>
+<tr class="even">
+<td>Sylvia Plath</td>
+<td>The Colossus</td>
+<td class="money"></td>
+<td class="money">$1031.72</td>
+</tr>
+</table>
+
+body {
+font-family: Arial, Verdana, sans-serif;
+color: #111111;
+     }
+table {
+width: 600px;
+      }
+th, td {
+padding: 7px 10px 10px 10px;
+       }
+th {
+text-transform: uppercase;
+letter-spacing: 0.1em;
+font-size: 90%;
+border-bottom: 2px solid #111111;
+border-top: 1px solid #999;
+text-align: left;
+   }
+tr.even {
+background-color: #efefef;
+        }
+tr:hover {
+background-color: #c3e6e5;
+         }
+.money {
+text-align: right;
+       }
+
+6. BORDER ON EMPTY CELLS : (empty-cells)
+
+If you have empty cells in your table, then you can use the empty-cells property to specify whether or not their borders should be shown.
+Since browsers treat empty cells in different ways, if you want to explicitly show or hide borders on any empty cells then you should use this property.
+It can take one of three values:
+
+A. show    : This shows the borders of any empty cells.
+B. hide    : This hides the borders of any empty cells.
+C. inherit : If you have one table nested inside another, the inherit value instructs the table cells to obey the rules of the containing table.
+
+e.g.:
+td {
+border: 1px solid #0088dd;
+padding: 15px;
+   }
+table.one 
+{
+empty-cells: show;
+}
+table.two 
+{
+empty-cells: hide;
+}
+
+7. GAPS BETWEEN CELLS (border-spacing,border-collapse) :
+
+1. The border-spacing property allows you to control the distance between adjacent cells. By default, browsers often leave a small gap between each table
+   cell, so if you want to increase or decrease this space then the border-spacing property allows you to control the gap. 
+2. The value of this property is usually specified in pixels. You can specify two values if desired to specify separate numbers for 
+   horizontal and vertical spacing.
+3. When a border has been used on table cells, where two cells meet, the width of lines would be twice that of the outside edges.
+   It is possible to collapse adjacent borders to prevent this using the border-collapse property.   
+   
+   A. Collapse : Borders are collapsed into a single border where possible. (border-spacing will be ignored and cells pushed together, and empty-cells
+                 properties will be ignored.)
+				 
+   B. separate : Borders are detached from each other. (border-spacing and empty-cells will be obeyed.)
+   
+8. STYLING FORMS :
+
+CSS is commonly used to control the appearance of form elements. This is both to make them more attractive and to
+make them more consistent across different browsers.
+
+It is most common to style:
+1. Text inputs and text areas
+2. Submit buttons
+3. Labels on forms, to get the form controls to align nicely.
+
+1. STYLING TEXT INPUTS :
+   Properties used     :
+   1. font-size        : sets the size of the text entered by the user.
+   2. color            : sets the text color, and background-color sets the background color of the input.
+   3. border           : adds a border around the edge of the input box,
+   4. border-radius    : can be used to create rounded corners (for browsers that support this property).
+   5. :focus           : pseudo-class is used to change the background color of the text input when it is being used, 
+                         and the :hover psuedo-class applies the same styles when the user hovers over them.
+   6. background-image : adds a background image to the box. Because there is a different image for each input, 
+                         we are using an attribute selector looking for the value of the id attribute on each input.
+
+e.g.:
+input {
+font-size: 120%;
+color: #5a5854;
+background-color: #f2f2f2;
+border: 1px solid #bdbdbd;
+border-radius: 5px;
+padding: 5px 5px 5px 30px;
+background-repeat: no-repeat;
+background-position: 8px 9px;
+display: block;
+margin-bottom: 10px;}
+input:focus {
+background-color: #ffffff;
+border: 1px solid #b1e1e4;}
+input#email {
+background-image: url("images/email.png");}
+input#twitter {
+background-image: url("images/twitter.png");}
+input#web {
+background-image: url("images/web.png");}
+
+2. STYLING SUBMIT BUTTONS :
+
+Following Properties can be used :
+
+1. color            : is used to change the color of the text on the button.
+2. text-shadow      : can give a 3D look to the text in browsers that support this property.
+3. border-bottom    : has been used to make the bottom border of the button slightly thicker, which gives it a more 3D feel.
+4. background color : can make the submit button stand out from other items around it. 
+                     (Creating a consistent style for all buttons helps users understand how they should interact with the site.) 
+					  A gradient background has been added for browsers that support gradients.
+5. :hover           : The :hover pseudo-class has been used to change the appearance of the button when the user hovers over it. 
+                      In this case, the background changes, the text gets darker, and the thicker border is applied to the top of the button.
+					  
+e.g.:
+
+input#submit {
+color: #444444;
+text-shadow: 0px 1px 1px #ffffff;
+border-bottom: 2px solid #b2b2b2;
+background-color: #b9e4e3;
+background: -webkit-gradient(linear, left top,
+left bottom, from(#beeae9), to(#a8cfce));
+background:
+-moz-linear-gradient(top, #beeae9, #a8cfce);
+background:
+-o-linear-gradient(top, #beeae9, #a8cfce);
+background:
+-ms-linear-gradient(top, #beeae9, #a8cfce);}
+input#submit:hover {
+color: #333333;
+border: 1px solid #a4a4a4;
+border-top: 2px solid #b2b2b2;
+background-color: #a0dbc4;
+background: -webkit-gradient(linear, left top,
+left bottom, from(#a8cfce), to(#beeae9));
+background:
+-moz-linear-gradient(top, #a8cfce, #beeae9);
+background:
+-o-linear-gradient(top, #a8cfce, #beeae9);
+background:
+-ms-linear-gradient(top, #a8cfce, #beeae9);}
+
+
+3. STYLING FIELDSETS AND LEGENDS :
+
+Fieldsets are particularly helpful in determining the edges of a form. In a long form they can help group together related information within it.
+The legend is used to indicate what information is required in the fieldset.
+
+Properties used:
+
+1. width            : is used to control the width of the fieldset. In this example, the width of the fieldset forces the form elements to wrap onto a new line
+                      in the correct place. (If it were wider, the items might sit on one line.)
+		              
+2. color            : is used to control the color of text.
+
+3. background-color : is used to change the color behind these items.
+
+4. border           : is used to control the appearance of the border around the fieldset and/or legend.
+
+5. border-radius    : is used to soften the edges of these elements in browsers that support this property. 
+
+6. padding          : can be used to add space inside these elements.
+
+
+4. ALIGNING FORMS CONTROLS : PROBLEM
+
+Labels for form elements are often different lengths, which means that the form controls will not appear in a straight line. 
+
+<form action="example.php" method="post">
+<div>
+<label for="name" class="title">Name:</label>
+<input type="text" id="name" name="name" />
+</div>
+<div>
+<label for="email" class="title">Email:</label>
+<input type="email" id="email" name="email" />
+</div>
+<div>
+<span class="title">Gender:</span>
+<input type="radio" name="gender" id="male"
+value="M" />
+<label for="male">Male</label>
+<input type="radio" name="gender" id="female"
+value="F" />
+<label for="female">Female</label><br />
+</div>
+<div>
+<input type="submit" value="Register"
+id="submit" />
+</div>
+</form>
+
+5. ALI FORMS CONTROLS : SOLUTION 
+
+Each row of the form has a title telling users what they need to enter. For the text inputs, the title is in the <label> element.
+For the radio buttons, the title is in a <span> element. Both have a class attribute with a value of title. 
+
+e.g.:
+div {
+border-bottom: 1px solid #efefef;
+margin: 10px;
+padding-bottom: 10px;
+width: 260px;}
+.title {
+float: left;
+width: 100px;
+text-align: right;
+padding-right: 10px;}
+.radio-buttons label {
+float: none;}
+.submit {
+text-align: right;}
+
+6. CURSOR STYLES (cursor) :
+
+The cursor property allows you to control the type of mouse cursor that should be displayed to users.
+For example, on a form you might set the cursor to be a hand when the user hovers over it.
+
+e.g.:
+<a href="http://www.whitmanarchive.org"> Walt Whitman</a>
+
+a { cursor: move; }
+
+Properties for the cursor:
+1. auto
+2. crosshair
+3. default
+4. pointer
+5. move
+6. text
+7. wait
+8. help
+9. url("cursor.gif");
+
+ 
+
+
+
